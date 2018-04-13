@@ -1,0 +1,12 @@
+version: '3'
+services:
+    webapp:
+        image: webdevops/php-apache-dev:5.6
+        volumes:
+          - ./:/app
+        working_dir: /app
+        restart: on-failure:5
+        ports:
+          - "80:80"
+        environment:
+          - PHP_DISPLAY_ERRORS=1
